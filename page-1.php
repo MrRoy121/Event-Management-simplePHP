@@ -1,9 +1,25 @@
-<html>
-<!-- 
-    This Is Copyrighted to Mr.ROY121 
-    Please Contact Becfore Using it..
-    Email: nilashishroyjoy@gmail.com
- -->
+<?php
+include "config/config.php";
+session_start();
+
+if (!isset($_SESSION["email"])) {
+    header("location: login.php");}
+$stmt = $conn->prepare("Select usrimg from user where email='".$_SESSION["email"]."'");
+ 
+ $stmt->execute();
+ 
+ $stmt->bind_result($aaa);
+ 
+ $products = array(); 
+ 
+ while($stmt->fetch()){
+ $temp = array();
+ $temp['aaa'] = $aaa; 
+ array_push($temp);
+ }
+    ?>
+    <html>
+ 
 
 <head>
 <meta charset="utf-8">
@@ -18,6 +34,8 @@
 <section class="banner" id="banner">
   <header id="header">
     <div> <img src="images/p.png" height="50" weight="45" style="margin-top: 15px; margin-left: 15px; display:inline;">
+    <p1 style="display:inline;  color: white; font-size: 16px; font-family:'Courier New'; margin-left: 15px; "> Current User E-mail : <?php echo $_SESSION["email"];?>.</p1>
+    <img src="user_images/<?php echo implode(" ",$temp);?>" class="img-circle" alt="User Pic" height="40" weight="25" style="border-radius: 50%; margin-top: 15px; margin-left: 15px; display:inline;">
     <nav class="navigation" >
 		  <li><a href="#banner">Home</a></li>
           
@@ -33,7 +51,7 @@
               <a href="update.php">Update User Info</a>
               <a href="logout.php">Logout</a>
             </div></a></li>
-          <li><a href="#dev" onclick='test();'>Current Events</a></li> 
+          <li><a href="#dev">Devolopers details</a></li> 
       </nav>
   </header>
 
@@ -63,29 +81,29 @@
             </div>
 
         <div class="services-content">
-          <h4 style="text-align:center;">Musical Night</h4>
-		  <b style="text-align:center;">Day 1</b>
-          <p style="text-align:center;">his text is styled with some of the text formatting properties. The heading uses the text-align, text-transform, and color properties. The paragraph is indented,</p>
-        </div style="text-align:center;">
+          <h4>Musical Night</h4>
+		  <b>Day 1</b>
+          <p>his text is styled with some of the text formatting properties. The heading uses the text-align, text-transform, and color properties. The paragraph is indented,</p>
+        </div>
     
         <div class="services-content">
-          <h4 style="text-align:center;">Dancing Night</h4>
-		  <b style="text-align:center;">Day 2</b>
-          <p style="text-align:center;">his text is styled with some of the text formatting properties. The heading uses the text-align, text-transform, and color properties. The paragraph is indented,</p>
+          <h4>Dancing Night</h4>
+		  <b>Day 2</b>
+          <p>his text is styled with some of the text formatting properties. The heading uses the text-align, text-transform, and color properties. The paragraph is indented,</p>
         </div>
       </div> 
       
         <div class="services-content">
-          <h4 style="text-align:center;">Food Night</h4>
-		  <b style="text-align:center;">Day 3</b>
-          <p style="text-align:center;">his text is styled with some of the text formatting properties. The heading uses the text-align, text-transform, and color properties. The paragraph is indented,</p>
+          <h4>Food Night</h4>
+		  <b>Day 3</b>
+          <p>his text is styled with some of the text formatting properties. The heading uses the text-align, text-transform, and color properties. The paragraph is indented,</p>
         </div>
       </div> 
   </div>
 </section> 
 
 
-<section id="dev" style="margin-bottom: 50px;">
+<section id="dev" >
 
       <div class="section-header">
                 <h2>Devolopers Details</h2>
@@ -111,6 +129,13 @@
           </div>
   </div>
 </section>
+
+
+
+<footer class="center" style="margin-top: 100px;">
+  <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=24.48721375490907,%2091.74317138650099&t=k&z=15&ie=UTF8&iwloc=&output=embed" ></iframe><br></div></div>
+</footer>
+
 </body>
 
 </html>
