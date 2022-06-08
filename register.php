@@ -1,11 +1,4 @@
-
-<!-- 
-    This Is Copyrighted to Mr.ROY121 
-    Please Contact Becfore Using it..
-    Email: nilashishroyjoy@gmail.com
- -->
- 
- <?php
+<?php
 include "config/config.php";
 if($_SERVER['REQUEST_METHOD']=='POST'){
 	if( $_POST['name'] && $_POST['password']  && $_POST['conpassword'] && $_POST['phone'] && $_POST['city'] && $_POST['email']){

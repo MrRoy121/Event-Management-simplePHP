@@ -1,11 +1,4 @@
-
-<!-- 
-    This Is Copyrighted to Mr.ROY121 
-    Please Contact Becfore Using it..
-    Email: nilashishroyjoy@gmail.com
- -->
- 
- <?php
+<?php
 include "config/config.php";
 session_start();
 
