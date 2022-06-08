@@ -1,4 +1,13 @@
 
+/**
+
+	This Is Copyrighted to Mr.ROY121 
+	Please Contact Becfore Using it..
+	Email: nilashishroyjoy@gmail.com 
+	
+**/
+
+
 .sidenav {
 	height: 750px;
 	width: 200px;
@@ -257,23 +266,20 @@ padding-top: 100px;
 	color: #ff5518;
 	display: block;
 	font-size: 14px;
-	height: 32px;
+	height: 100%;
 	line-height: 32px;
-	margin-right: 5px;
 	margin: auto;
-	width: 32px;
+	width: 100%;
 }
 .social-icons a:hover {
 	background-color: #ff5518;
 	border-color: #ff5518;
 	color: #fff;
 }
-.center{
+.centers{
 	margin: auto;
 	text-align: center;
-	
-	width: 60%;
-	border: 3px solid #ffffff;
+	width: 100%;
 	padding: 10px;
 }
 
